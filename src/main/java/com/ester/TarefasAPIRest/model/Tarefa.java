@@ -1,6 +1,9 @@
 package com.ester.TarefasAPIRest.model;
 
 import java.time.LocalDate;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,6 +16,7 @@ public class Tarefa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataEntrega;
     private String responsavel;
 
