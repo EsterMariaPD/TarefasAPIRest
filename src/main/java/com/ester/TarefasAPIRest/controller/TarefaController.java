@@ -52,7 +52,7 @@ public class TarefaController {
 	         return ResponseEntity.ok().body(updated);
 	     }).orElse(ResponseEntity.notFound().build());
 	 }
-	 
+	
 	 @DeleteMapping("/{id}")
 	 public ResponseEntity<?> delete(@PathVariable Long id) {
 	     return tarefaRepository.findById(id).map(tarefa -> {
